@@ -1,0 +1,66 @@
+int intersectPoint(Node* h1, Node* h2)
+{
+    // Your Code Here
+    Node* p=h1;
+    Node* q = h2;
+    int c=0,c1=0,i;
+    while(p)
+    {
+        c++;
+        p=p->next;
+    }
+    while(q)
+    {
+        c1++;
+        q=q->next;
+    }
+    // int diff = abs(c-c1);
+    p=h1;
+    q=h2;
+    // if(c>c1)
+    // {
+    //     for(i=0;i<diff;i++)
+    //       p=p->next;
+    // }
+    // else
+    // {
+    //     for(i=0;i<diff;i++)
+    //       q=q->next;
+    // }
+    
+    // while(p!=q)
+    // {
+    //     p=p->next;
+    //     q=q->next;
+    // }
+    // // if there is no common value
+    // if(p)
+    //   return p->data;
+    // return -1;
+    while(p)
+    {
+        if(c>c1)
+        {
+            p=p->next;
+            c--;
+        }
+        else if(c<c1)
+        {
+            q=q->next;
+            c1--;
+        }
+        else if(c==c1)
+        {
+            if(p==q)
+              return p->data;
+            else
+             {
+                  p=p->next;
+                  q=q->next;
+                //   c1--;
+                //   c--;
+             }
+        }
+    }
+    return -1;
+}
