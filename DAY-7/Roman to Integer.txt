@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int romanToInt(string s) {
+        map<char,int> mp;
+        int i,n=s.length(),ans=0,p=0;
+        mp['I'] = 1;
+        mp['V'] = 5;
+        mp['X'] = 10;
+        mp['L'] = 50;
+        mp['C'] = 100;
+        mp['D'] = 500;
+        mp['M'] = 1000;
+
+        for(i=n-1;i>=0;i--)
+        {
+            if(mp[s[i]]>=p)
+              ans+=mp[s[i]];
+            else
+              ans-=mp[s[i]];
+            p=mp[s[i]];
+        }
+
+        return ans;
+        
+        
+    }
+};

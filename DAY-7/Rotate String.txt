@@ -1,0 +1,22 @@
+class Solution {
+public:
+    // bool rotateString(string s, string goal) {
+    //     int len = s.length();
+    //     int j=0;
+    //     while(j<len)
+    //     {
+    //         s=s.substr(1,len-1)+s[0];
+    //         if(s==goal)
+    //            return true;
+    //         j++;
+    //     }
+    //     return false;
+    // }
+    bool rotateString(string s, string goal) {
+      if(s.length()!=goal.length())
+          return false;
+        if((s+s).find(goal)!=string::npos)
+          return true;
+        return false;
+    }
+};
