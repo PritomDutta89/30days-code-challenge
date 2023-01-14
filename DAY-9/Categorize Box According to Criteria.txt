@@ -1,0 +1,20 @@
+class Solution {
+public:
+    string categorizeBox(int l, int w, int h, int m) {
+        long long int bu=0,hv=0;
+        long long int p = 1LL*l*w*h;
+        if(p>=pow(10,9) || l>=pow(10,4) || w>=pow(10,4) || h>=pow(10,4) )
+            bu=1;
+        if(m>=100)
+            hv=1;
+        if(hv==1 && bu==1)
+            return "Both";
+        else if(hv==0 && bu==0)
+            return "Neither";
+        else if(hv==1 && bu==0)
+            return "Heavy";
+        else 
+            return "Bulky";
+       
+    }
+};
