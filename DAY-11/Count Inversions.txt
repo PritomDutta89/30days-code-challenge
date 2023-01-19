@@ -1,0 +1,58 @@
+class Solution
+{
+    // arr[]: Input Array
+    // N : Size of the Array arr[]
+    //Function to count inversions in the array.
+
+    
+     static long malgo(long a[],long q,long mid,long mid1,long l)
+    {
+        List<Long> p = new ArrayList<>();
+        int i = (int)q, m = (int)mid, m1=(int)mid1, j=(int)l;
+        long cn = 0;
+        
+        while(i<=m && m1<=j)
+        {
+            if(a[i]<=a[m1])
+              p.add(a[i++]);
+            else
+            {
+                cn+=mid-i+1;
+                p.add(a[m1++]);
+            }
+        }
+        while(i<=m)
+          p.add(a[i++]);
+        while(m1<=j)
+          p.add(a[m1++]);
+          
+        int t =0;
+        for(int k=(int)q;k<=l;k++)
+        {
+            a[k] = p.get(t++);
+        }
+        return cn;
+        
+    }
+    
+    static long ms(long a[],long i,long j)
+    {
+        if(i>=j)
+         return 0; 
+        else
+        {
+            long m = (i+j)/2;
+            long c1 = ms(a,i,m);
+            long c2= ms(a,m+1,j);
+            long ci = malgo(a,i,m,m+1,j);
+            return c1+c2+ci;
+        }
+    }
+    
+    static long inversionCount(long a[], long n)
+    {
+        // Your Code Here
+        long c = ms(a,0,n-1);
+        return c;
+    }
+}
