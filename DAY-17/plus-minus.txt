@@ -1,0 +1,21 @@
+void plusMinus(vector<int> arr) {
+      int i,n=arr.size();
+      float p=0.0,q=0.0,r=0.0; //Implicit type conversion happen her so no problem
+      for(i=0;i<n;i++)
+      {
+          if(arr[i]>0)
+          {
+              p++;
+          }
+          else if(arr[i]<0)
+          {
+              q++;
+          }
+          else{
+              r++;
+          }
+      }
+      printf("%.6f \n", p/n);
+      printf("%.6f \n", q/n);
+      printf("%.6f \n", r/n);
+}

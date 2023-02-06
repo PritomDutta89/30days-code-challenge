@@ -1,0 +1,35 @@
+void miniMaxSum(vector<int> arr) {
+    int i,n=arr.size();
+    long long int min=arr[0],max=arr[0];
+    long long int p=0,q=0,t=0,t1=0;
+    for(i=1;i<n;i++)
+    {
+        if(min>arr[i])
+        {
+            min=arr[i];
+            t=i;
+        }
+        if(max<arr[i])
+        {
+            max=arr[i];
+            t1=i;
+        }
+           
+    }
+    for(i=0;i<n;i++)
+    {
+        if(i==t1)
+          continue;
+        else
+          p+=arr[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        if(i==t)
+          continue;
+        else
+          q+=arr[i];
+           
+    }
+    cout<<p<<" "<<q<<endl;
+}
