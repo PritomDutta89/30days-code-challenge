@@ -1,0 +1,14 @@
+int lonelyinteger(vector<int> a) {
+    map<int,int> mp;
+    int i,n=a.size();
+    for(i=0;i<n;i++)
+    {
+        mp[a[i]]++;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(mp[a[i]]==1)
+          return a[i];
+    }
+    return 0;
+}

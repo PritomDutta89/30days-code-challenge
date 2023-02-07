@@ -1,0 +1,11 @@
+vector<int> countingSort(vector<int> arr) {
+    long long int i,j,n=arr.size();
+    vector<int> v(100,0);
+     
+     for(i=0;i<n;i++)
+     {
+         j=arr[i];
+         v[j]++;
+     }
+     return v;
+}
