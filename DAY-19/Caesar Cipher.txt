@@ -1,0 +1,40 @@
+string caesarCipher(string s, int k) {
+    string s1="";
+    int i;
+    for(i=0;i<s.length();i++)
+    {
+        if(s[i]>=65 && s[i]<=90)
+        {
+            if(s[i]+k>90)
+            {
+                char p = s[i]+k-26;
+                while(p<65 || p>90)
+                    p = p-26;
+                s1=s1+p;
+            }
+            else{
+                char p = s[i]+k;
+                s1=s1+p;
+            }
+        }
+        else if(s[i]>=97 && s[i]<=122)
+        {
+            if(s[i]+k>122)
+            {
+                char p = s[i]+k-26;
+                while(p<97 || p>122)
+                    p = p-26;
+                s1=s1+p;
+            }
+            else{
+                char p = s[i]+k;
+                s1=s1+p;
+            }
+        }
+        else{
+            s1=s1+s[i];
+        }
+    }
+    return s1;
+    
+}
