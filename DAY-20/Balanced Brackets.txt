@@ -1,0 +1,33 @@
+string isBalanced(string s) {
+    stack<char> p;
+    int i;
+    for(i=0;i<s.length();i++)
+    {
+        if(s[i]=='(' || s[i]=='{' || s[i]=='[')
+        {
+            p.push(s[i]);
+        }
+        else if(p.empty() && (s[i]==')' || s[i]=='}' || s[i]==']'))
+        {
+            p.push(s[i]);
+            break;
+        }
+        else
+        {
+            if(p.top()=='(' && s[i]==')')
+              p.pop();
+            else if(p.top()=='{' && s[i]=='}')
+              p.pop();
+            else if(p.top()=='[' && s[i]==']')
+              p.pop();
+            else 
+              break;
+
+        }
+        
+    }
+    if(p.empty())
+       return "YES";
+    else
+      return "NO";
+} 
