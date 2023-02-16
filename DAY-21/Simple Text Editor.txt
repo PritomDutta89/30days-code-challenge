@@ -1,0 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    vector<string> v;
+    string s="";
+    int q;
+    cin>>q;
+    while(q--)
+    {
+        int x;
+        cin>>x;
+        if(x==1)
+        {
+          string k;
+          cin>>k;
+          v.push_back(s);
+          s=s+k;    
+        }
+        else if(x==2)
+        {
+          int k;
+          cin>>k;
+          int n = s.length()-k;
+          v.push_back(s);
+          s=s.substr(0,n);    
+        }
+        else if(x==3)
+        {
+          int k;
+          cin>>k;
+          cout<<s[k-1]<<endl;   
+        }
+        else if(x==4)
+        {
+          s=v[v.size()-1];
+          v.pop_back();
+        }
+    }
+    
+    return 0;
+}
