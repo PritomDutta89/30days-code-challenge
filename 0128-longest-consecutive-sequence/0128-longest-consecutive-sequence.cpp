@@ -1,12 +1,12 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& v) {
-        set<int> s;
+        set<int> s(v.begin(), v.end()); //this is faster than for loop
         int i,c,c1=0;
-        for(i=0;i<v.size();i++)
-        {
-          s.insert(v[i]);
-        }
+        // for(i=0;i<v.size();i++)
+        // {
+        //   s.insert(v[i]);
+        // }
         for(auto it : v)
         {
             if(!s.count(it-1))
