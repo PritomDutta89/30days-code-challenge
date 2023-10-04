@@ -30,16 +30,14 @@ public:
             
         }
         
-        
-
-        if(k>c)
-        {
-            while(k>c)
-            {
-               k=k-c;
-            }
-        }
-        c=c-k;
+        // if(k>c)
+        // {
+        //     while(k>c)
+        //     {
+        //        k=k-c;
+        //     }
+        // }
+        c=c-(k%c);
         if(c==0)
         {
             p->next=NULL;
